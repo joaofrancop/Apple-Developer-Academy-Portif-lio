@@ -1,0 +1,16 @@
+#menu a{
+    text-decoration: none;
+    color: #000;
+}
+
+#menu a:hover{
+    color: #0F0;
+    font-weight: bold;
+}
+
+li{ list-style-type: square; }
+
+.li-circle{ list-style-type: circle; }
+.li-disc{ list-style-type: disc; }
+
+.verde{ color: #0F0; }

@@ -1,0 +1,21 @@
+header{background-color: #da00fc;}
+#menu a{
+    text-decoration: none;
+    color: #000;
+}
+
+#menu a:hover{
+    color: #0F0;
+    font-weight: bold;
+}
+
+li{ list-style-type: square; }
+
+.li-circle{ list-style-type: circle; }
+.li-disc{ list-style-type: disc; }
+
+.verde{ color: #0F0; }
+
+/*
+Organizar o codigo com base noq aparece no site
+main, footer{background-color: #eee;} (mesma função da classe, porem aplica para todas as paginas, a classe aplica individualmente*/

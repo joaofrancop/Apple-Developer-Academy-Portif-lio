@@ -1,0 +1,32 @@
+f = e - (a - b) + (b - c) 
+
+SUB $t0, $s0, $s1;
+SUB $t1, $s1, $s2;
+ADD $t2, $t0, $t1;
+SUB $s5, $s4, $t2;
+
+
+a = b[15] - c
+
+LW $t0, 15($s1);
+SUB $s0, $t0, $s2;
+
+
+d = a[5] + c[3] 
+
+LW $t0, $20(s0);
+LW $t1, $12(s2);
+ADD $s3, $t0, $t1;
+
+
+b[245] = a + c 
+
+ADD $t0, $s0, $s2;
+SW $t0, 980(s1);
+
+
+if(a != b)
+b = d + e
+else
+a = t1 + t2
+

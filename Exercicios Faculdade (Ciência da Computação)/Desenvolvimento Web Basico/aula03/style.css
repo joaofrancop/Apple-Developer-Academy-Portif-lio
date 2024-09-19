@@ -1,0 +1,12 @@
+table{
+    width: 100%;/*tamanho tabela*/
+    border-collapse: collapse;/*sobrepoe as bordas*/
+}
+
+th, td{
+    border: 1px solid #000;/*criar bordas tabela*/
+    padding: 8px; /*espaçamento*/
+    text-align: center; /*alinhamento texto*/
+}
+
+/*.bg{background-color: #eeeeee;}*/
