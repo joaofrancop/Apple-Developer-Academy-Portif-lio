@@ -1,0 +1,75 @@
+Este algoritmo implementa a multiplicação de dois números inteiros `a` e `b` usando recursão em duas abordagens: uma recursiva simples e outra com recursividade em cauda.
+
+### Função `multiplicacao`
+
+```c
+int multiplicacao(int a, int b) {
+  if (b == 1)
+    return a;
+  else
+    return a + multiplicacao(a, (b - 1));
+}
+```
+
+#### Explicação:
+- **Objetivo**: Multiplicar `a` por `b` usando somas repetidas.
+- **Funcionamento**:
+  - Se `b` é igual a 1, retorna `a` (caso base).
+  - Caso contrário, retorna `a` somado ao resultado de `multiplicacao(a, b - 1)`.
+  - A função continua chamando a si mesma com o valor de `b` decrementado em 1 até que `b` seja igual a 1.
+
+#### Exemplo de Execução:
+Para `a = 3` e `b = 4`:
+- `multiplicacao(3, 4)` retorna `3 + multiplicacao(3, 3)`
+- `multiplicacao(3, 3)` retorna `3 + multiplicacao(3, 2)`
+- `multiplicacao(3, 2)` retorna `3 + multiplicacao(3, 1)`
+- `multiplicacao(3, 1)` retorna `3`
+- Portanto, o resultado é `3 + 3 + 3 + 3 = 12`.
+
+### Função `multiplicacaoParcial`
+
+```c
+int multiplicacaoParcial(int a, int b, int parcial) {
+  if (b == 1)
+    return parcial;
+  else
+    return multiplicacaoParcial(a, (b - 1), (parcial + a));
+}
+```
+
+#### Explicação:
+- **Objetivo**: Realizar a multiplicação de `a` por `b` de forma recursiva, utilizando um acumulador (`parcial`) para armazenar o resultado intermediário.
+- **Funcionamento**:
+  - Se `b` é igual a 1, retorna `parcial` (caso base).
+  - Caso contrário, chama a si mesma, decrementando `b` e somando `a` ao acumulador `parcial`.
+
+#### Exemplo de Execução:
+Para `a = 3`, `b = 4`, e `parcial = 3`:
+- `multiplicacaoParcial(3, 4, 3)` retorna `multiplicacaoParcial(3, 3, 6)`
+- `multiplicacaoParcial(3, 3, 6)` retorna `multiplicacaoParcial(3, 2, 9)`
+- `multiplicacaoParcial(3, 2, 9)` retorna `multiplicacaoParcial(3, 1, 12)`
+- `multiplicacaoParcial(3, 1, 12)` retorna `12`
+
+### Função `multiplicacaoCauda`
+
+```c
+int multiplicacaoCauda(int a, int b) {
+  return multiplicacaoParcial(a, b, a);
+}
+```
+
+#### Explicação:
+- **Objetivo**: Fornecer uma interface simplificada para a função `multiplicacaoParcial`.
+- **Funcionamento**:
+  - Chama `multiplicacaoParcial(a, b, a)` para iniciar a recursão com o acumulador `parcial` inicialmente igual a `a`.
+
+#### Exemplo de Execução:
+Para `a = 3` e `b = 4`:
+- `multiplicacaoCauda(3, 4)` chama `multiplicacaoParcial(3, 4, 3)`, resultando em 12.
+
+### Diferenças entre as Funções:
+- **`multiplicacao`**: Utiliza recursão simples e não mantém o resultado parcial, o que leva a uma pilha de chamadas maior.
+- **`multiplicacaoParcial` e `multiplicacaoCauda`**: Usam recursão em cauda, mantendo o resultado parcial em um acumulador, o que pode ser mais eficiente em termos de memória, pois o compilador pode otimizar essas chamadas.
+
+### Conclusão:
+Ambas as abordagens calculam `a * b` usando somas repetidas, mas a versão com recursividade em cauda (`multiplicacaoCauda`) é mais eficiente em termos de uso da pilha de chamadas, especialmente para valores grandes de `b`.
