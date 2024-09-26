@@ -15,7 +15,7 @@ Sou estudante de Ciência da Computação com experiência em automação de pro
 
 Experiência Profissional 
 
-Empresa: DMCF-IMEX LDA** (2022 - 2023)  
+Empresa: DMCF-IMEX LDA (2022 - 2023)  
 Técnico Administrativo
 Na DMCF-IMEX LDA, atuei nas áreas de faturamento, gestão de estoque e automação de etiquetas, otimizando processos logísticos.  
 - Automação de etiquetas com software Bartender para padrões europeus.  
